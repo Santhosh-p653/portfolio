@@ -323,34 +323,6 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* Floating hologram cards */}
-          <div
-            className="absolute -left-12 top-20 px-3 py-2 rounded-lg text-xs font-mono animate-float"
-            style={{
-              background: 'oklch(0.11 0.025 265 / 0.8)',
-              border: '1px solid oklch(0.65 0.22 255 / 0.3)',
-              color: 'oklch(0.65 0.22 255)',
-              backdropFilter: 'blur(10px)',
-              animationDelay: '0.5s',
-            }}
-          >
-            <div className="text-muted-foreground mb-0.5" style={{ color: 'oklch(0.5 0.04 250)', fontSize: 10 }}>NEURAL NET</div>
-            <div>99.2% accuracy</div>
-          </div>
-
-          <div
-            className="absolute -right-8 bottom-32 px-3 py-2 rounded-lg text-xs font-mono animate-float"
-            style={{
-              background: 'oklch(0.11 0.025 265 / 0.8)',
-              border: '1px solid oklch(0.55 0.25 295 / 0.3)',
-              color: 'oklch(0.7 0.18 295)',
-              backdropFilter: 'blur(10px)',
-              animationDelay: '1.2s',
-            }}
-          >
-            <div style={{ color: 'oklch(0.5 0.04 250)', fontSize: 10 }}>AGENTS LIVE</div>
-            <div>5 running</div>
-          </div>
         </div>
       </div>
 
