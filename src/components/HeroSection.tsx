@@ -63,7 +63,7 @@ export default function HeroSection() {
         ref={heroRef}
         className="absolute inset-0 scale-110"
         style={{
-          backgroundImage: 'url(/city-bg.webp)',
+          backgroundImage: `url(${import.meta.env.BASE_URL}city-bg.webp)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(0.45) saturate(1.2)',
@@ -176,7 +176,7 @@ export default function HeroSection() {
               <span className="relative z-10">Explore Projects</span>
             </button>
 
-            <a
+            
               href="https://github.com/Santhosh-p653"
               target="_blank"
               rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export default function HeroSection() {
               GitHub
             </a>
 
-            <a
+            
               href="https://www.linkedin.com/in/santhosh-paramasivan-27962332a"
               target="_blank"
               rel="noopener noreferrer"
@@ -301,7 +301,7 @@ export default function HeroSection() {
             }}
           >
             <img
-              src="/anime-hero.webp"
+              src={`${import.meta.env.BASE_URL}anime-hero.webp`}
               alt="Santhosh Paramasivan - AI Engineer"
               className="w-full object-cover"
               style={{ height: 480 }}
