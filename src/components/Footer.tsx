@@ -21,10 +21,10 @@ export default function Footer() {
           Santhosh Paramasivan
         </div>
         <p className="text-xs mb-4" style={{ color: 'oklch(0.45 0.04 250)' }}>
-          AI Engineer · Machine Learning · Agentic AI · LLMs · Intelligent Systems
+          AI Engineer · Machine Learning · Agentic AI · LLMs · Cloud & System Design
         </p>
         <p className="text-xs" style={{ color: 'oklch(0.35 0.03 250)' }}>
-          © 2024 Santhosh Paramasivan. All rights reserved.
+          © 2026 Santhosh Paramasivan. All rights reserved.
         </p>
       </div>
     </footer>
