@@ -176,7 +176,7 @@ export default function HeroSection() {
               <span className="relative z-10">Explore Projects</span>
             </button>
 
-            
+            <a
               href="https://github.com/Santhosh-p653"
               target="_blank"
               rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export default function HeroSection() {
               GitHub
             </a>
 
-            
+            <a
               href="https://www.linkedin.com/in/santhosh-paramasivan-27962332a"
               target="_blank"
               rel="noopener noreferrer"
