@@ -46,6 +46,15 @@ const projects = [
     color: '290',
     featured: false,
   },
+  {
+    title: 'Smart Grid',
+    description: 'Grid management platform for administrators and operators — handles fault tolerance and real-time transformer status monitoring across the power grid.',
+    tags: ['Spring Boot', 'MySQL', 'Next.js', 'Fault Tolerance'],
+    github: 'https://github.com/Santhosh-p653/smart-grid',
+    live: null,
+    color: '210',
+    featured: false,
+  },
 ]
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
