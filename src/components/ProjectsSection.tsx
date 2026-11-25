@@ -1,63 +1,120 @@
 import { useEffect, useRef } from 'react'
 
-const projects = [
+interface Project {
+  title: string
+  description: string
+  tags: string[]
+  github: string
+  live: string | null
+  color: string
+  featured: boolean
+  badge?: string
+  icon?: string
+}
+
+const projects: Project[] = [
   {
-    title: 'Deepfake Agentic AI',
-    description: 'AI-powered multi-agent deepfake detection system leveraging advanced computer vision and ensemble models for real-time media authenticity verification.',
-    tags: ['Agentic AI', 'Computer Vision', 'Deep Learning', 'Python'],
-    github: 'https://github.com/Santhosh-p653/deepfake-agentic-ai',
-    live: null,
-    color: '255',
+    title: 'E-Green Quanta (SIH 2026)',
+    badge: 'SIH 2026 · AWS Live',
+    icon: '🌱',
+    description: 'Quantum-inspired traffic route optimization engine & dispatch dashboard (SIH 2026). Benchmarks QPSO and Quantum Walk over 70+ km regional road network. Deployed on AWS behind Caddy and firewall.',
+    tags: ['FastAPI', 'PostgreSQL', 'AWS', 'Docker', 'Caddy', 'SIH 2026'],
+    github: 'https://github.com/Santhosh-p653/egreen-quanta',
+    live: 'http://13.205.230.193/',
+    color: '210',
     featured: true,
   },
   {
-    title: 'Multimodal RAG Assistant',
-    description: 'Retrieval-Augmented multimodal assistant using modern LLM pipelines. Processes text, images and documents for intelligent Q&A.',
-    tags: ['RAG', 'LLM', 'Multimodal', 'LangChain'],
-    github: 'https://github.com/Santhosh-p653/rag-multimodal-assistant',
+    title: 'AlphaSource',
+    badge: 'HackOctober Winner (MLH)',
+    icon: '🛡️',
+    description: 'Winner of HackOctober (MLH x Tech4Hack) — Bilingual (English/Tamil) developer policy gate and welfare scheme assistant powered by Strands Decider 2B and AWS Bedrock to classify requests before execution.',
+    tags: ['MLH Winner', 'Decision Models', 'AWS Bedrock', 'Strands SDK', 'FastAPI'],
+    github: 'https://github.com/Santhosh-p653/alphasource',
     live: null,
     color: '290',
     featured: true,
   },
   {
+    title: 'Multimodal RAG Assistant',
+    badge: 'Agentverse Winner (₹3k INR)',
+    icon: '🧠',
+    description: 'Agentverse 2026 Hackathon Winner (₹3,000 INR prize) — Retrieval-Augmented multimodal assistant with hybrid Qdrant/BM25 retrieval, Whisper STT, Sarvam AI Indic voice synthesis, and LangGraph diagnostic reasoning.',
+    tags: ['Agentverse Winner', 'RAG', 'LangGraph', 'Qdrant', 'FastAPI'],
+    github: 'https://github.com/Santhosh-p653/rag-multimodal-assistant',
+    live: null,
+    color: '255',
+    featured: true,
+  },
+  {
+    title: 'Scrapling MCP Server',
+    badge: 'm8ven Indexed · AWS',
+    icon: '⚡',
+    description: 'Knowledge ingestion FastMCP server indexed in the m8ven repository. Provides AI agents and IDEs unified web scraping, documentation crawling, GitHub ingestion, and PDF extraction. Deployed on AWS Lightsail.',
+    tags: ['MCP Server', 'FastMCP', 'AWS Lightsail', 'Web Scraping', 'm8ven'],
+    github: 'https://github.com/Santhosh-p653/scrapling',
+    live: null,
+    color: '210',
+    featured: true,
+  },
+  {
+    title: 'Doc2Site',
+    badge: 'Techcommon Hacks Winner',
+    icon: '📄',
+    description: 'Techcommon Hacks Winner — Transforms documentation and PDFs into responsive static web platforms with incremental generation, search indexing, and automated CI/CD pipeline.',
+    tags: ['Techcommon Winner', 'Node.js', 'Static Site', 'GitHub Pages'],
+    github: 'https://github.com/Santhosh-p653/doc2site',
+    live: 'https://santhosh-p653.github.io/doc2site/Santhosh.html',
+    color: '255',
+    featured: false,
+  },
+  {
+    title: 'Deepfake Agentic AI',
+    badge: 'Under Refinement',
+    icon: '🤖',
+    description: 'AI-powered multi-agent deepfake detection system leveraging RetinaFace, Xception CNN, and ChromaDB. Currently under active refinement with ongoing architectural upgrades.',
+    tags: ['Under Refinement', 'Computer Vision', 'Deep Learning', 'LangGraph', 'Python'],
+    github: 'https://github.com/Santhosh-p653/deepfake-agentic-ai',
+    live: null,
+    color: '290',
+    featured: false,
+  },
+  {
     title: 'ShoppyAI',
-    description: 'AI-powered shopping assistant with intelligent recommendations, natural language product search, and personalized user experience.',
-    tags: ['AI', 'NLP', 'Recommendations', 'FastAPI'],
+    badge: 'HuggingFace Live',
+    icon: '🛒',
+    description: 'AI-powered shopping assistant with intelligent recommendations, natural language product search, and personalized conversational commerce.',
+    tags: ['AI', 'NLP', 'FastAPI', 'Gradio', 'HuggingFace'],
     github: 'https://github.com/Santhosh-p653/shoppyai',
     live: 'https://santhosh11042007-shoppyai.hf.space/',
     color: '210',
     featured: false,
   },
   {
-    title: 'Attendance Management',
-    description: 'Intelligent attendance management platform with modern backend architecture, automated tracking, and analytics dashboard.',
-    tags: ['Backend', 'Python', 'Database', 'API'],
-    github: 'https://github.com/Santhosh-p653/Attendance',
+    title: 'Cascade Prevention',
+    badge: 'Cloud-Native DevOps',
+    icon: '🛡️',
+    description: 'AI-assisted DevOps platform detecting application timeout cascades, monitoring service health telemetry, and isolating failures with circuit breakers and fallback mechanisms.',
+    tags: ['DevOps', 'FastAPI', 'Circuit Breaker', 'Telemetry', 'Docker'],
+    github: 'https://github.com/Santhosh-p653/cascade-prevention',
     live: null,
     color: '255',
     featured: false,
   },
   {
-    title: 'Doc2Site',
-    description: 'Transform documents into beautiful websites automatically using AI — converts PDFs, Markdown, and documents into full static sites.',
-    tags: ['AI', 'Document Processing', 'Web Generation', 'LLM'],
-    github: 'https://github.com/Santhosh-p653/doc2site',
-    live: null,
-    color: '290',
-    featured: false,
-  },
-  {
     title: 'Smart Grid',
+    badge: 'Fault Tolerance',
+    icon: '🔌',
     description: 'Grid management platform for administrators and operators — handles fault tolerance and real-time transformer status monitoring across the power grid.',
     tags: ['Spring Boot', 'MySQL', 'Next.js', 'Fault Tolerance'],
     github: 'https://github.com/Santhosh-p653/smart-grid',
     live: null,
-    color: '210',
+    color: '290',
     featured: false,
   },
 ]
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -69,7 +126,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           setTimeout(() => {
             el.style.opacity = '1'
             el.style.transform = 'translateY(0)'
-          }, index * 100)
+          }, index * 80)
         }
       },
       { threshold: 0.1 }
@@ -124,17 +181,31 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
       <div className="p-6">
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-lg"
-            style={{
-              background: `oklch(0.65 0.22 ${project.color} / 0.1)`,
-              border: `1px solid oklch(0.65 0.22 ${project.color} / 0.3)`,
-            }}
-          >
-            {project.color === '255' ? '🤖' : project.color === '290' ? '🧠' : '⚡'}
+        <div className="flex items-start justify-between mb-4 gap-2">
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+              style={{
+                background: `oklch(0.65 0.22 ${project.color} / 0.1)`,
+                border: `1px solid oklch(0.65 0.22 ${project.color} / 0.3)`,
+              }}
+            >
+              {project.icon ?? (project.color === '255' ? '🤖' : project.color === '290' ? '🧠' : '⚡')}
+            </div>
+            {project.badge && (
+              <span
+                className="text-[11px] font-bold px-2.5 py-0.5 rounded-full"
+                style={{
+                  background: `oklch(0.65 0.22 ${project.color} / 0.12)`,
+                  border: `1px solid oklch(0.65 0.22 ${project.color} / 0.35)`,
+                  color: `oklch(0.85 0.15 ${project.color})`,
+                }}
+              >
+                {project.badge}
+              </span>
+            )}
           </div>
-          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
             {project.live && (
               <a
                 href={project.live}
@@ -154,7 +225,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                   ;(e.currentTarget as HTMLElement).style.background = `oklch(0.65 0.22 ${project.color} / 0.15)`
                 }}
               >
-                Live Demo ↗
+                Live ↗
               </a>
             )}
             <a
@@ -233,7 +304,7 @@ export default function ProjectsSection() {
               color: 'oklch(0.65 0.22 255)',
             }}
           >
-            Featured Work
+            Featured Work & Hackathon Winners
           </div>
           <h2
             className="text-4xl md:text-5xl font-black tracking-tight"
@@ -244,7 +315,7 @@ export default function ProjectsSection() {
               backgroundClip: 'text',
             }}
           >
-            Projects
+            Projects & Systems
           </h2>
           <div
             className="w-20 h-1 mx-auto mt-4 rounded-full"

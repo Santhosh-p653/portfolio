@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
 const roles = [
-  'AI Engineer',
-  'Machine Learning Expert',
-  'LLM Architect',
-  'Agentic AI Builder',
-  'Computer Vision Engineer',
+  'Strong Learner & AI Engineer',
+  '75+ Hackathons Competitor',
+  '3x Hackathon Winner',
+  'AWS Builder (5 Hackathons · 5+ Deployed)',
+  'Agentic AI & Decision Model Architect',
+  'Transformer & LLM Engineer',
 ]
 
 function useTypewriter(words: string[], speed = 80, pause = 1800) {
@@ -102,7 +103,7 @@ export default function HeroSection() {
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-            Available for opportunities
+            Strong Learner · 75+ Hackathons · 5+ AWS Deployments
           </div>
 
           {/* Name */}
@@ -131,7 +132,7 @@ export default function HeroSection() {
 
           {/* Subtitle tags */}
           <div className="flex flex-wrap gap-2 mb-4 animate-fade-up delay-300">
-            {['Machine Learning', 'Agentic AI', 'Large Language Models', 'Intelligent Systems'].map(tag => (
+            {['Strong Learner', 'Decision Models', '75+ Hackathons', 'AWS Cloud (5+ Deployed)', 'LLMs From Scratch'].map(tag => (
               <span
                 key={tag}
                 className="text-xs font-medium px-3 py-1 rounded-full"
@@ -148,11 +149,74 @@ export default function HeroSection() {
 
           {/* Tagline */}
           <p
-            className="text-base md:text-lg mb-8 max-w-lg animate-fade-up delay-400"
+            className="text-base md:text-lg mb-6 max-w-xl animate-fade-up delay-400"
             style={{ color: 'oklch(0.7 0.04 250)', lineHeight: 1.7 }}
           >
-            Designing intelligent systems that solve real-world problems.
+            Designing intelligent systems that solve real-world problems — from training custom GPT-style transformers on NVIDIA A100 GPUs to deploying hardened microservices on AWS across 75+ hackathons.
           </p>
+
+          {/* Metrics Highlights */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-xl animate-fade-up delay-450">
+            <div
+              className="p-3 rounded-xl"
+              style={{
+                background: 'oklch(0.12 0.025 265 / 0.6)',
+                border: '1px solid oklch(0.65 0.22 255 / 0.25)',
+              }}
+            >
+              <div className="text-xl md:text-2xl font-black" style={{ color: 'oklch(0.85 0.18 255)' }}>
+                75+
+              </div>
+              <div className="text-[11px] font-medium" style={{ color: 'oklch(0.65 0.05 250)' }}>
+                Hackathons Competed
+              </div>
+            </div>
+
+            <div
+              className="p-3 rounded-xl"
+              style={{
+                background: 'oklch(0.12 0.025 265 / 0.6)',
+                border: '1px solid oklch(0.55 0.25 295 / 0.25)',
+              }}
+            >
+              <div className="text-xl md:text-2xl font-black" style={{ color: 'oklch(0.85 0.18 295)' }}>
+                3x
+              </div>
+              <div className="text-[11px] font-medium" style={{ color: 'oklch(0.65 0.05 250)' }}>
+                Hackathon Winner
+              </div>
+            </div>
+
+            <div
+              className="p-3 rounded-xl"
+              style={{
+                background: 'oklch(0.12 0.025 265 / 0.6)',
+                border: '1px solid oklch(0.75 0.18 210 / 0.25)',
+              }}
+            >
+              <div className="text-xl md:text-2xl font-black" style={{ color: 'oklch(0.85 0.18 210)' }}>
+                5+
+              </div>
+              <div className="text-[11px] font-medium" style={{ color: 'oklch(0.65 0.05 250)' }}>
+                AWS Deployments
+              </div>
+            </div>
+
+            <div
+              className="p-3 rounded-xl"
+              style={{
+                background: 'oklch(0.12 0.025 265 / 0.6)',
+                border: '1px solid oklch(0.65 0.22 255 / 0.25)',
+              }}
+            >
+              <div className="text-xl md:text-2xl font-black" style={{ color: 'oklch(0.85 0.18 255)' }}>
+                8h A100
+              </div>
+              <div className="text-[11px] font-medium" style={{ color: 'oklch(0.65 0.05 250)' }}>
+                LLM Scratch Training
+              </div>
+            </div>
+          </div>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 animate-fade-up delay-500">
